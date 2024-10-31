@@ -14,5 +14,13 @@ def project_charter():
 def team_profile():
     return render_template('team_profile.html')
 
+@app.route('/gantt-chart')
+def gantt_chart():
+    return render_template('gantt_chart.html')
+
+@app.route('/wbs')
+def wbs():
+    return render_template('wbs.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
