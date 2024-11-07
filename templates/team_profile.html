@@ -3,123 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Profile</title>
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+    <title>Our Team | Project Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
         }
-
-        nav a {
-            margin-right: 15px;
+        .team-member-card {
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-
-        .team-member {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
+        .team-member-card:hover {
+            transform: translateY(-5px);
         }
-
-            .team-member img {
-                border-radius: 50%;
-                width: 100px;
-                height: 100px;
-                margin-right: 20px;
-            }
-
-            .team-member h2 {
-                margin: 0;
-                font-size: 1.5em;
-            }
-
-            .team-member p {
-                margin: 5px 0;
-            }
     </style>
 </head>
-<body>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/project-charter">Project Charter</a>
-        <a href="/team-profile">Team Profile</a>
-	<a href="/gantt-chart">Gantt Chart</a>
-        <a href="/wbs">WBS</a>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex space-x-7">
+                    <div class="hidden md:flex items-center space-x-6">
+                        <a href="/" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="/project-charter" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Project Charter</a>
+                        <a href="/team-profile" class="text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Team Profile</a>
+                        <a href="/gantt-chart" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Gantt Chart</a>
+                        <a href="/wbs" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">WBS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </nav>
 
-    <h1>Team Profile</h1>
-    <p>This page contains the team profile information.</p>
-
-    <!-- Team Member 1 -->
-    <div class="team-member">
-        <img src="path-to-image-1.jpg" alt="Team Member 1">
-        <div>
-            <h2>Adam</h2>
-            <p>Project Manager</p>
+    <!-- Header Section -->
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4">
+            <h1 class="text-3xl font-bold text-gray-900">Meet Our Team</h1>
+            <p class="mt-2 text-gray-600">A dedicated group of professionals working together to deliver excellence.</p>
         </div>
-    </div>
+    </header>
 
-    <!-- Team Member 2 -->
-    <div class="team-member">
-        <img src="path-to-image-2.jpg" alt="Team Member 2">
-        <div>
-            <h2>Bidhatri</h2>
-            <p>Developer/ Researcher</p>
-        </div>
-    </div>
+    <!-- Team Grid -->
+    <main class="max-w-7xl mx-auto py-12 px-4">
+        <div class="team-grid">
+            <!-- Team members -->
+            <div class="team-member-card bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="/api/placeholder/300/300" alt="Adam" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h2 class="text-xl font-semibold text-gray-900">Adam</h2>
+                    <p class="text-blue-600 font-medium">Project Manager</p>
+                    <p class="mt-2 text-gray-600">Leading the team with strategic vision and ensuring project success.</p>
+                </div>
+            </div>
 
-    <!-- Team Member 3 -->
-    <div class="team-member">
-        <img src="path-to-image-3.jpg" alt="Team Member 3">
-        <div>
-            <h2>Andrew</h2>
-            <p>Designer</p>
-        </div>
-    </div>
+            <div class="team-member-card bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="/api/placeholder/300/300" alt="Bidhatri" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h2 class="text-xl font-semibold text-gray-900">Bidhatri</h2>
+                    <p class="text-blue-600 font-medium">Developer / Researcher</p>
+                    <p class="mt-2 text-gray-600">Combining development expertise with thorough research methodology.</p>
+                </div>
+            </div>
 
-    <!-- Team Member 4 -->
-    <div class="team-member">
-        <img src="path-to-image-4.jpg" alt="Team Member 4">
-        <div>
-            <h2>Nitin</h2>
-            <p>UI/UX Designer</p>
-        </div>
-    </div>
+            <div class="team-member-card bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="/api/placeholder/300/300" alt="Andrew" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h2 class="text-xl font-semibold text-gray-900">Andrew</h2>
+                    <p class="text-blue-600 font-medium">Designer</p>
+                    <p class="mt-2 text-gray-600">Creating intuitive and engaging design solutions.</p>
+                </div>
+            </div>
 
-    <!-- Team Member 5 -->
-    <div class="team-member">
-        <img src="path-to-image-5.jpg" alt="Team Member 5">
-        <div>
-            <h2>Kenneth</h2>
-            <p>Designer</p>
-        </div>
-    </div>
+            <div class="team-member-card bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="/api/placeholder/300/300" alt="Nitin" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h2 class="text-xl font-semibold text-gray-900">Nitin</h2>
+                    <p class="text-blue-600 font-medium">UI/UX Designer</p>
+                    <p class="mt-2 text-gray-600">Crafting seamless user experiences and interfaces.</p>
+                </div>
+            </div>
 
-    <!-- Team Member 6 -->
-    <div class="team-member">
-        <img src="path-to-image-6.jpg" alt="Team Member 6">
-        <div>
-            <h2>Emman</h2>
-            <p>Developer</p>
-        </div>
-    </div>
+            <div class="team-member-card bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="/api/placeholder/300/300" alt="Kenneth" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h2 class="text-xl font-semibold text-gray-900">Kenneth</h2>
+                    <p class="text-blue-600 font-medium">Designer</p>
+                    <p class="mt-2 text-gray-600">Bringing creative solutions to design challenges.</p>
+                </div>
+            </div>
 
-    <!-- Team Member 7 -->
-    <div class="team-member">
-        <img src="path-to-image-7.jpg" alt="Team Member 7">
-        <div>
-            <h2>Luke</h2>
-            <p>Developer/ Researcher</p>
-        </div>
-    </div>
-	
-    <!-- Team Member 8 -->
-    <div class="team-member">
-        <img src="path-to-image-8.jpg" alt="Team Member 8">
-        <div>
-            <h2>Nick</h2>
-            <p>Researcher</p>
-        </div>
-    </div>
+            <div class="team-member-card bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="/api/placeholder/300/300" alt="Emman" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h2 class="text-xl font-semibold text-gray-900">Emman</h2>
+                    <p class="text-blue-600 font-medium">Developer</p>
+                    <p class="mt-2 text-gray-600">Building robust and scalable solutions.</p>
+                </div>
+            </div>
 
+            <div class="team-member-card bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="/api/placeholder/300/300" alt="Luke" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h2 class="text-xl font-semibold text-gray-900">Luke</h2>
+                    <p class="text-blue-600 font-medium">Developer / Researcher</p>
+                    <p class="mt-2 text-gray-600">Driving innovation through research and development.</p>
+                </div>
+            </div>
+
+            <div class="team-member-card bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="/api/placeholder/300/300" alt="Nick" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h2 class="text-xl font-semibold text-gray-900">Nick</h2>
+                    <p class="text-blue-600 font-medium">Researcher</p>
+                    <p class="mt-2 text-gray-600">Conducting in-depth research to inform project decisions.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-12">
+        <div class="max-w-7xl mx-auto py-6 px-4">
+            <p class="text-center text-gray-500 text-sm">© 2024 Project Team. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
