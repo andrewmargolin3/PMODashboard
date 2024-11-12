@@ -22,5 +22,13 @@ def gantt_chart():
 def wbs():
     return render_template('wbs.html')
 
+@app.route('/cost-estimate')
+def cost_estimate():
+    return render_template('cost_estimate.html')
+
+@app.route('/critical-path-analysis')
+def critical_path_analysis():
+    return render_template('critical_path_analysis.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
