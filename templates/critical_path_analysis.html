@@ -3,7 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <title>Critical Path Analysis</title>
-    <link rel= "stylesheet" type= "text/css" href= "/static/styles.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+    <style>
+        /* Additional styles specific to the Critical Path Analysis page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        nav {
+            background-color: #0044cc;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+            nav a {
+                color: white;
+                margin: 0 15px;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+                nav a:hover {
+                    text-decoration: underline;
+                }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .content {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        p {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .diagram {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .task {
+            background-color: #0044cc;
+            color: #fff;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            width: 120px;
+        }
+
+        .arrow {
+            width: 30px;
+            height: 30px;
+            margin: 0 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #0044cc;
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -15,7 +95,34 @@
         <a href="/critical-path-analysis">Critical Path Analysis</a>
         <a href="/cost-estimate">Cost Estimate</a>
     </nav>
-    <h1>Welcome to the Critical Path Analysis Page</h1>
-    <p>This is the critical path analysis page of our Flask application.</p>
+
+    <div class="container">
+        <h1>Critical Path Analysis</h1>
+        <div class="content">
+            <h2>Overview</h2>
+            <p>
+                Critical Path Analysis (CPA) is a project management technique used to determine the sequence of essential tasks that must be completed on time for the project to meet its deadline. The "critical path" represents the longest path through the project timeline, ensuring that all tasks are completed on schedule.
+            </p>
+
+            <h2>Importance of Critical Path</h2>
+            <p>
+                Identifying the critical path allows project managers to focus on tasks that have the highest impact on the project’s completion date. Delays in tasks on the critical path could result in the entire project being delayed, so these tasks must be monitored closely.
+            </p>
+
+            <h2>Critical Path Example</h2>
+            <p>Below is a sample critical path diagram showing tasks and their dependencies:</p>
+
+            <!-- Simple Critical Path Diagram -->
+            <div class="diagram">
+                <div class="task">Task A</div>
+                <div class="arrow">→</div>
+                <div class="task">Task B</div>
+                <div class="arrow">→</div>
+                <div class="task">Task C</div>
+                <div class="arrow">→</div>
+                <div class="task">Task D</div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
