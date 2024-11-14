@@ -30,5 +30,9 @@ def cost_estimate():
 def critical_path_analysis():
     return render_template('critical_path_analysis.html')
 
+@app.route('/risk-management')
+def risk_management():
+    return render_template('risk_management.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
