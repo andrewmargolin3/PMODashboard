@@ -40,6 +40,13 @@
             <p class="mt-2 text-gray-600">A dedicated group of professionals working together to deliver excellence.</p>
         </div>
     </header>
+    <main>
+        {% block content %}
+            <h1>Welcome to the placeholder page for references</h1>
+            <p>This is the example page of our Flask application.</p>
+            <img src="{{ url_for('static', filename='images/Adam.jpg') }}" class="image"/>
+        {% endblock %}
+    </main>
 
     <!-- Footer -->
     <footer class="bg-white border-t border-gray-200 mt-12">

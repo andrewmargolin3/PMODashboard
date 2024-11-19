@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Welcome to the example page for references</h1>
+<p>This is the example page of our Flask application.</p>
+<img
+  src="{{ url_for('static', filename='images/Adam.jpg') }}"
+  class="image"/>
+{% endblock %}
