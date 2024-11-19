@@ -1,22 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Landing Page</title>
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
-</head>
-<body>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/project-charter">Project Charter</a>
-        <a href="/team-profile">Team Profile</a>
-        <a href="/gantt-chart">Gantt Chart</a>
-        <a href="/wbs">WBS</a>
-        <a href="/risk-management">Risk Management</a>
-        <a href="/cost-estimate">Cost Estimate</a>
-        <a href="/critical-path-analysis">Critical Path Analysis</a>
-    </nav>
-    <h1>Welcome to the Landing Page</h1>
-    <p>This is the landing page of our Flask application.</p>
-</body>
-</html>
+{% extends "layout.html" %}
+{% block header %}
+<div class="max-w-7xl mx-auto py-6 px-4">
+    <h1 class="text-3xl font-bold text-gray-900">Portfolio</h1>
+    <p class="mt-2 text-gray-600">Landing</p>
+</div>
+{% endblock %}
+{% block content %}
+<h1>Welcome to the landing page for references</h1>
+<p>This is the landing page of our Flask application.</p>
+{% endblock %}
