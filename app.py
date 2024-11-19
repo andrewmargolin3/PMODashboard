@@ -33,6 +33,9 @@ def critical_path_analysis():
 @app.route('/risk-management')
 def risk_management():
     return render_template('risk_management.html')
+@app.route('/layout')
+def layout():
+    return render_template('layout.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
