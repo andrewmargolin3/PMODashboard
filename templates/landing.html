@@ -19,12 +19,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Management Portfolio</title>
+    <title>{% block title %}Portfolio{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
+        /* Additional custom styles (if needed) */
         .hero {
             display: flex;
             flex-direction: column;
@@ -33,44 +31,31 @@
             height: 100vh;
             text-align: center;
             color: white;
-            background: linear-gradient(to bottom right, #4A90E2, #9013FE), 
+            background: linear-gradient(to bottom right, #4A90E2, #9013FE),
                         url('https://example.com/tech-background.jpg') no-repeat center/cover;
-        }
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        .hero .cta-buttons {
-            display: flex;
-            gap: 1rem;
-        }
-        .hero .cta-buttons a {
-            text-decoration: none;
-            color: white;
-            background-color: #FF5A5F;
-            padding: 0.75rem 1.5rem;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        .hero .cta-buttons a:hover {
-            background-color: #D44E4E;
         }
     </style>
 </head>
-<body>
-    <div class="hero">
-        <h1>Welcome to the IT Management Portfolio!</h1>
-        <p>A showcase of project management in action, built with Python and Flask.</p>
-        <div class="cta-buttons">
-            <a href="#portfolio">Explore the Portfolio</a>
-            <a href="#team">Meet the Team</a>
-        </div>
+<body class="bg-gray-100">
+    <div class="max-w-7xl mx-auto">
+        {% block header %}
+        {% endblock %}
+        
+        {% block content %}
+        {% endblock %}
     </div>
 </body>
 </html>
+{% extends "layout.html" %}
+
+{% block header %}
+<div class="hero">
+    <h1 class="text-4xl font-bold">Welcome to the IT Management Portfolio!</h1>
+    <p class="mt-2 text-lg">A showcase of project management in action, built with Python and Flask.</p>
+    <div class="cta-buttons mt-4">
+        <a href="#portfolio" class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">Explore the Portfolio</a>
+        <a href="#team" class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">Meet the Team</a>
+    </div>
+</div>
+{% endblock %}
+
