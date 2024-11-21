@@ -106,7 +106,7 @@
 </html>
 -->
 {% extends "layout.html" %}
-<!--{% block header %}
+{% block header %}
 <div class="max-w-7xl mx-auto py-6 px-4">
     <h1 class="text-3xl font-bold text-gray-900">Portfolio</h1>
     <p class="mt-2 text-gray-600">The project charter for our portfolio.</p>
@@ -114,26 +114,28 @@
 {% endblock %}
 -->
 {% block content %}
-<h1>Team 4 Project Charter</h1>
-    <div class="section">
-        <p style="font-size: 1.20rem"> <span style="font-size: 1.75rem;font-weight: bold">Department:</span> School of Information Technology</p>
+<div class="max-w-5xl mx-auto my-10 bg-white shadow-lg rounded-lg p-6">
+    <h1 class="text-4xl font-bold text-blue-600 border-b-2 border-blue-400 pb-2">Team 4 Project Charter</h1>
+
+    <div class="section mt-6">
+        <p class="text-lg"><span class="font-semibold text-gray-800">Department:</span> School of Information Technology</p>
     </div>
 
-    <div class="section">
-        <p style="font-size: 1.20rem"> <span style="font-size: 1.75rem;font-weight: bold">Date Created:</span> 10/1/2024</p>
+    <div class="section mt-4">
+        <p class="text-lg"><span class="font-semibold text-gray-800">Date Created:</span> 10/1/2024</p>
     </div>
 
-    <div class="section">
-        <p style="font-size: 1.20rem"> <span style="font-size: 1.75rem;font-weight: bold">Last Date Updated:</span> 10/31/2024</p>
+    <div class="section mt-4">
+        <p class="text-lg"><span class="font-semibold text-gray-800">Last Date Updated:</span> 10/31/2024</p>
     </div>
 
-    <div class="section">
-        <p style="font-size: 1.20rem"> <span style="font-size: 1.75rem;font-weight: bold">Team Manager:</span> Adam Haywood</p>
+    <div class="section mt-4">
+        <p class="text-lg"><span class="font-semibold text-gray-800">Team Manager:</span> Adam Haywood</p>
     </div>
 
-    <div class="section">
-        <p style="font-size: 1.20rem;"> <span style="font-size: 1.75rem;font-weight: bold">Team Roles</span></p>
-        <ul style="padding-left: 2em">
+    <div class="section mt-6">
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">Team Roles</h2>
+        <ul class="list-disc list-inside text-gray-700">
             <li>Kenneth Lindsey - Designer</li>
             <li>Andrew Margolin - Designer</li>
 	        <li>Nitin Penmetsa - Designer</li>
@@ -145,39 +147,39 @@
         </ul>
     </div>
 
-    <div class="section">
-        <h3>Mission and Objectives</h3>
-        <p>Create a Python-based dashboard interface using Flask as a web framework, complemented with HTML and CSS for appearance.</p>
+    <div class="section mt-6">
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">Mission and Objectives</h2>
+        <p class="text-gray-700">Create a Python-based dashboard interface using Flask as a web framework, complemented with HTML and CSS for appearance.</p>
     </div>
 
-    <div class="section">
-        <h3>Work Processes</h3>
-        <p>We'll use Flask as a web framework in addition to some HTML and CSS for aesthetics. Include a Gantt chart, interactive calendar, mind map, etc.</p>
+    <div class="section mt-6">
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">Work Processes</h2>
+        <p class="text-gray-700">We'll use Flask as a web framework in addition to some HTML and CSS for aesthetics. Include a Gantt chart, interactive calendar, mind map, etc.</p>
     </div>
 
-    <div class="section">
-        <h3>Communication Norms</h3>
-        <p>In class (Tuesday and Friday 12:30 am - 1:50 pm). MS Teams when apart.</p>
+    <div class="section mt-6">
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">Communication Norms</h2>
+        <p class="text-gray-700">In class (Tuesday and Friday 12:30 am - 1:50 pm). MS Teams when apart.</p>
     </div>
 
-    <div class="section">
-        <h3>Ground Rules</h3>
-        <p>No fighting. Complete assignments on time. Seek help from the team when needed.</p>
+    <div class="section mt-6">
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">Ground Rules</h2>
+        <p class="text-gray-700">No fighting. Complete assignments on time. Seek help from the team when needed.</p>
     </div>
 
-    <div class="section">
-        <h3>Conflict Resolution</h3>
-        <p>Talk to each other and resolve issues by meeting in the middle.</p>
+    <div class="section mt-6">
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">Conflict Resolution</h2>
+        <p class="text-gray-700">Talk to each other and resolve issues by meeting in the middle.</p>
     </div>
 
-    <div class="section">
-        <h3>Budget and Resources</h3>
-        <p>$566 per person for the cost of tuition (566 x 7 people = $3,962)</p>
+    <div class="section mt-6">
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">Budget and Resources</h2>
+        <p class="text-gray-700">$566 per person for the cost of tuition (566 x 7 people = $3,962)</p>
     </div>
 
-    <div class="section">
-        <p style="font-size: 1.20rem;"> <span style="font-size: 1.75rem;font-weight: bold;">Signatures</span></p>
-        <ul style="padding-left: 2em;">
+    <div class="section mt-6">
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">Signatures</h2>
+        <ul class="list-disc list-inside text-gray-700">
             <li>Manager: Adam Haywood</li>
             <li>Kenneth Lindsey</li>
             <li>Luke Lindsey</li>
@@ -185,12 +187,13 @@
             <li>Bidhatri Amatya</li>
             <li>Emman Asamoah</li>
 			<li>Nick Capozzi</li>
-		<li>Nitin Penmetsa</li>
+			<li>Nitin Penmetsa</li>
         </ul>
     </div>
 
-    <div class="section">
-        <h3>Performance Assessment</h3>
-        <p>N/A</p>
+    <div class="section mt-6">
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">Performance Assessment</h2>
+        <p class="text-gray-700">N/A</p>
     </div>
+</div>
 {% endblock %}
