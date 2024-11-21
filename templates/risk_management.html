@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -116,6 +117,147 @@
     <h1>Risk Management Page</h1>
 <p>Welcome to the Risk Management section. Below are the identified risks and strategies to mitigate them effectively.</p>
  
+    <-- Security Risks Section ->
+<section id="security-risks">
+<h2>Security Risks</h2>
+<ul>
+<li><strong>Firewalls:</strong> Ensure firewall configurations block unauthorized access.</li>
+<li><strong>Data Loss Prevention:</strong> Enable regular data backups for the website code and data.</li>
+<li><strong>Downtime Mitigation:</strong> Use load balancing and monitoring to reduce downtime.</li>
+<li><strong>Regular Updates:</strong> Keep all software, libraries, and plugins up-to-date to prevent vulnerabilities.</li>
+<li><strong>Two-Factor Authentication (2FA):</strong> Enable 2FA for added security on admin access.</li>
+</ul>
+<h3>Mitigation Strategies</h3>
+<p>Implement regular security audits and update systems to the latest versions. Schedule daily backups for website data and code. Encourage the use of strong passwords and enable 2FA to secure access.</p>
+</section>
+ 
+    <-- Data Risks Section ->
+<section id="data-risks">
+<h2>Data Risks</h2>
+<ul>
+<li><strong>Data Security:</strong> Encrypt sensitive data at rest and in transit.</li>
+<li><strong>Access Control:</strong> Use role-based access control (RBAC) and perform regular audits.</li>
+</ul>
+<h3>Mitigation Strategies</h3>
+<p>Utilize strong encryption protocols and enforce access controls. Schedule monthly audits of data access logs and enforce secure data handling practices.</p>
+</section>
+ 
+    <-- Legal Risks Section ->
+<section id="legal-risks">
+<h2>Legal Risks</h2>
+<ul>
+<li><strong>Copyright Compliance:</strong> Verify that all media, images, and code are properly licensed or free to use.</li>
+<li><strong>Privacy Regulations:</strong> Ensure compliance with GDPR and privacy laws by informing users about data collection.</li>
+</ul>
+<h3>Mitigation Strategies</h3>
+<p>Conduct regular reviews of content and verify that it complies with copyright laws. Display clear terms of use and privacy policy to inform users of data handling practices.</p>
+</section>
+ 
+    <-- Reputational Risks Section ->
+<section id="reputational-risks">
+<h2>Reputational Risks</h2>
+ 
+        <ul>
+<li><strong>Website Usability:</strong> Regularly test all features to ensure they function correctly and provide a positive user experience.</li>
+<li><strong>Broken Link Checks:</strong> Perform periodic checks to ensure all links are functional and lead to the correct resources.</li>
+<li><strong>Reliable Hosting:</strong> Choose a reputable hosting provider offering redundancy and uptime guarantees.</li>
+</ul>
+<h3>Mitigation Strategies</h3>
+<p>Regularly audit the website for usability and broken links. Partner with a reliable hosting provider to ensure minimal downtime and quick recovery in case of issues. Add a feedback page to encourage user input on improvements.</p>
+</section>
+</body>
+</html>
+-->
+{% extends "layout.html" %}
+{% block additional_styles %}
+<style>
+    /* Basic reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Main Styles */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #4a4e69;
+        font-weight: bold;
+        font-size: 32px;
+    }
+
+    /* Section Styles */
+    section {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+        section h2 {
+            color: #4a4e69;
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+    ul {
+        list-style-type: none;
+    }
+
+        ul li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #e8e8e8;
+            border-radius: 4px;
+        }
+
+    /* Specific risk type colors */
+    #security-risks h2 {
+        color: #e63946;
+    }
+
+    #data-risks h2 {
+        color: #2a9d8f;
+    }
+
+    #legal-risks h2 {
+        color: #f4a261;
+    }
+
+    #reputational-risks h2 {
+        color: #264653;
+    }
+
+    /* Mitigation Strategies styling */
+    section h3 {
+        color: #333;
+        margin-top: 20px;
+        font-size: 1.1em;
+    }
+
+    section p {
+        background-color: #f0f8ff;
+        border-left: 4px solid #4a4e69;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 4px;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<h1>Risk Management Page</h1>
+<p>Welcome to the Risk Management section. Below are the identified risks and strategies to mitigate them effectively.</p>
+ 
     <!-- Security Risks Section -->
 <section id="security-risks">
 <h2>Security Risks</h2>
@@ -164,5 +306,4 @@
 <h3>Mitigation Strategies</h3>
 <p>Regularly audit the website for usability and broken links. Partner with a reliable hosting provider to ensure minimal downtime and quick recovery in case of issues. Add a feedback page to encourage user input on improvements.</p>
 </section>
-</body>
-</html>
+{% endblock %}
