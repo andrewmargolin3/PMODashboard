@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Breakdown Structure</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex space-x-7">
+                    <div class="hidden md:flex items-center space-x-6">
+                        <a href="/" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="/project-charter" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Project Charter</a>
+                        <a href="/team-profile" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Team Profile</a>
+                        <a href="/gantt-chart" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Gantt Chart</a>
+                        <a href="/wbs" class="text-blue-600 px-3 py-2 rounded-md text-sm font-medium">WBS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <style>
+        nav { 
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+        
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --background-color: #f4f6f7;
+            --text-color: #333;
+            --hover-color: #e74c3c;
+   
+        }
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-weight: bolder;
+        
+        }
+
+        .wbs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        .wbs-header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .wbs-section {
+            background-color: white;
+            border-left: 5px solid var(--secondary-color);
+            margin-bottom: 15px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .wbs-section:hover {
+            transform: translateX(10px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+
+        .wbs-section h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .wbs-subsection {
+            margin-left: 30px;
+            margin-bottom: 10px;
+        }
+
+        .wbs-subsection h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .wbs-tasks {
+            list-style-type: disc;
+            margin-left: 50px;
+        }
+
+        .wbs-tasks li {
+            margin-bottom: 5px;
+            transition: color 0.3s ease;
+        }
+
+        .wbs-tasks li:hover {
+            color: var(--hover-color);
+            cursor: pointer;
+        }
+
+        .project-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .deliverables, .success-criteria {
+            width: 48%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .project-info {
+                flex-direction: column;
+            }
+            .deliverables, .success-criteria {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wbs-container">
+        <div class="wbs-header">
+            <h1>Work Breakdown Structure </h1>
+        </div>
+
+        <div class="wbs-section">
+            <h2>1. Project Planning and Group Roles</h2>
+            <div class="wbs-subsection">
+                <h3>1.1 Determine Team Roles</h3>
+                <ul class="wbs-tasks">
+                    <li>Identify team member skills</li>
+                    <li>Assign specific responsibilities</li>
+                    <li>Create role descriptions</li>
+                    <li>Develop team organizational chart</li>
+                </ul>
+            </div>
+            <div class="wbs-subsection">
+                <h3>1.2 Determine Missions and Objectives</h3>
+                <ul class="wbs-tasks">
+                    <li>Define project goals</li>
+                    <li>Establish key performance indicators (KPIs)</li>
+                    <li>Create mission statement</li>
+                    <li>Outline project scope</li>
+                </ul>
+            </div>
+            <div class="wbs-subsection">
+                <h3>1.3 Determine Team Rules and Project Charter</h3>
+                <ul class="wbs-tasks">
+                    <li>Develop communication guidelines</li>
+                    <li>Create decision-making protocols</li>
+                    <li>Define project governance</li>
+                    <li>Draft initial project charter document</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="wbs-section">
+            <h2>2. Create GitHub Repository</h2>
+            <div class="wbs-subsection">
+                <h3>2.1 Add Project Documents</h3>
+                <ul class="wbs-tasks">
+                    <li>Set up repository structure</li>
+                    <li>Create README.md</li>
+                    <li>Add initial documentation</li>
+                    <li>Configure repository settings</li>
+                </ul>
+            </div>
+            <div class="wbs-subsection">
+                <h3>2.2 Add Team Member Headshots</h3>
+                <ul class="wbs-tasks">
+                    <li>Collect team member photos</li>
+                    <li>Resize and optimize images</li>
+                    <li>Create team photo directory</li>
+                    <li>Upload images to repository</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="wbs-section">
+            <h2>3. Research and Initial Project Files</h2>
+            <div class="wbs-subsection">
+                <h3>3.1 Research Flask for Web Apps</h3>
+                <ul class="wbs-tasks">
+                    <li>Review Flask documentation</li>
+                    <li>Investigate best practices</li>
+                    <li>Compare Flask with alternative frameworks</li>
+                    <li>Document research findings</li>
+                </ul>
+            </div>
+            <div class="wbs-subsection">
+                <h3>3.2 Develop Navigation</h3>
+                <ul class="wbs-tasks">
+                    <li>Design HTML navigation structure</li>
+                    <li>Create CSS styling for navigation</li>
+                    <li>Implement responsive design</li>
+                    <li>Test navigation across devices</li>
+                </ul>
+            </div>
+            <div class="wbs-subsection">
+                <h3>3.3 Add Files to GitHub</h3>
+                <ul class="wbs-tasks">
+                    <li>Commit initial project files</li>
+                    <li>Create branching strategy</li>
+                    <li>Set up GitHub Actions (if applicable)</li>
+                    <li>Configure repository permissions</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="wbs-section">
+            <h2>4. Creation of Main Pages</h2>
+            <div class="wbs-subsection">
+                <h3>4.1 Project Charter Page</h3>
+                <ul class="wbs-tasks">
+                    <li>Draft project charter content</li>
+                    <li>Design page layout</li>
+                    <li>Create wireframes</li>
+                    <li>Implement page template</li>
+                </ul>
+            </div>
+            <div class="wbs-subsection">
+                <h3>4.2 Team Profile Page</h3>
+                <ul class="wbs-tasks">
+                    <li>Write team member biographies</li>
+                    <li>Collect professional details</li>
+                    <li>Design team profile layout</li>
+                    <li>Integrate team photos</li>
+                </ul>
+            </div>
+            <div class="wbs-subsection">
+                <h3>4.3 Work Breakdown Structure (WBS)</h3>
+                <ul class="wbs-tasks">
+                    <li>Create detailed WBS document</li>
+                    <li>Visualize project breakdown</li>
+                    <li>Develop hierarchical structure</li>
+                    <li>Review and validate WBS</li>
+                </ul>
+            </div>
+            <div class="wbs-subsection">
+                <h3>4.4 Gantt Chart</h3>
+                <ul class="wbs-tasks">
+                    <li>Identify project milestones</li>
+                    <li>Create project timeline</li>
+                    <li>Define task dependencies</li>
+                    <li>Develop interactive Gantt chart</li>
+                </ul>
+            </div>
+            <div class="wbs-subsection">
+                <h3>4.5 Calendar</h3>
+                <ul class="wbs-tasks">
+                    <li>Set up project milestones</li>
+                    <li>Add key project dates</li>
+                    <li>Create interactive calendar view</li>
+                    <li>Integrate with project management tools</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="wbs-section">
+            <h2>5. Styling and Clean Up</h2>
+            <div class="wbs-subsection">
+                <h3>5.1 Congruency in Styling</h3>
+                <ul class="wbs-tasks">
+                    <li>Develop consistent design system</li>
+                    <li>Create style guide</li>
+                    <li>Validate color schemes</li>
+                    <li>Ensure uniform typography</li>
+                </ul>
+            </div>
+            <div class="wbs-subsection">
+                <h3>5.2 Clean Up and Optimization</h3>
+                <ul class="wbs-tasks">
+                    <li>Perform code refactoring</li>
+                    <li>Optimize website performance</li>
+                    <li>Conduct code review</li>
+                    <li>Remove unnecessary code</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="wbs-section">
+            <h2>6. Monitoring and Testing</h2>
+            <div class="wbs-subsection">
+                <h3>6.1 Continuous Monitoring</h3>
+                <ul class="wbs-tasks">
+                    <li>Establish progress tracking mechanism</li>
+                    <li>Create performance dashboards</li>
+                    <li>Set up regular status meetings</li>
+                    <li>Implement progress reporting</li>
+                </ul>
+            </div>
+            <div class="wbs-subsection">
+                <h3>6.2 Testing Phases</h3>
+                <ul class="wbs-tasks">
+                    <li>Conduct functional testing</li>
+                    <li>Perform user acceptance testing</li>
+                    <li>Create test cases</li>
+                    <li>Document and track issues</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-info">
+            <div class="deliverables">
+                <h2>Project Deliverables</h2>
+                <ul class="wbs-tasks">
+                    <li>Completed Web Application</li>
+                    <li>GitHub Repository</li>
+                    <li>Project Documentation</li>
+                    <li>Team Profile Website</li>
+                    <li>Project Management Artifacts</li>
+                    <li>Testing and Monitoring Reports</li>
+                </ul>
+            </div>
+            <div class="success-criteria">
+                <h2>Project Success Criteria</h2>
+                <ul class="wbs-tasks">
+                    <li>Fully functional web application</li>
+                    <li>Well-documented project process</li>
+                    <li>Comprehensive team collaboration</li>
+                    <li>Adherence to project timeline</li>
+                    <li>Meeting all defined objectives</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="wbs-container"> ,
+    </div>
+
+</body>
+</html>
