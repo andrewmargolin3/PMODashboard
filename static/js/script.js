@@ -86,7 +86,47 @@ function closeTaskModal() {
     document.getElementById("modal-overlay").style.display = "none";
 }
 
-// Submit task data to the server
+function triggerEasterEgg(taskName) {
+    console.log("Checking for Easter egg trigger...");
+    if (taskName.toLowerCase() === "boom or doom") {
+        console.log("Easter egg triggered!");
+
+        // Play the sound
+        const audio = new Audio('/static/audio/easteregg.mp3');
+        audio.play().then(() => console.log("Audio playback started."))
+            .catch(err => console.error("Error playing audio:", err));
+
+        // Create an overlay for the full-screen image
+        const easterEggOverlay = document.createElement("div");
+        easterEggOverlay.id = "easter-egg-overlay";
+        easterEggOverlay.style.position = "fixed";
+        easterEggOverlay.style.top = "0";
+        easterEggOverlay.style.left = "0";
+        easterEggOverlay.style.width = "100vw";
+        easterEggOverlay.style.height = "100vh";
+        easterEggOverlay.style.backgroundImage = "url('/static/images/easteregg-bg.jpg')";
+        easterEggOverlay.style.backgroundSize = "cover";
+        easterEggOverlay.style.backgroundPosition = "center";
+        easterEggOverlay.style.zIndex = "9999";
+        easterEggOverlay.style.display = "flex";
+        easterEggOverlay.style.alignItems = "center";
+        easterEggOverlay.style.justifyContent = "center";
+
+        // Add the overlay to the body
+        document.body.appendChild(easterEggOverlay);
+
+        // Revert the overlay after 5 seconds
+        setTimeout(() => {
+            document.body.removeChild(easterEggOverlay); // Remove the overlay
+            console.log("Easter egg overlay removed.");
+        }, 5000);
+    } else {
+        console.log("Easter egg not triggered.");
+    }
+}
+
+
+
 function submitTask() {
     const name = document.getElementById("task-name").value;
     const startDate = document.getElementById("start-date").value;
@@ -117,22 +157,29 @@ function submitTask() {
             progress
         })
     })
-    .then(response => {
-        if (!response.ok) {
-            return response.json().then(err => { throw new Error(err.error || "Server error"); });
-        }
-        return response.json();
-    })
-    .then(data => {
-        alert(data.message);
-        closeTaskModal();
-        loadTasks();
-    })
-    .catch(error => {
-        console.error("Error adding task:", error);
-        alert(`Failed to add task: ${error.message}`);
-    });
+        .then(response => {
+            if (!response.ok) {
+                return response.json().then(err => { throw new Error(err.error || "Server error"); });
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Show success alert
+            alert(data.message);
+
+            // Trigger the Easter egg only after the alert is closed
+            triggerEasterEgg(name);
+
+            // Close the task modal and reload tasks
+            closeTaskModal();
+            loadTasks();
+        })
+        .catch(error => {
+            console.error("Error adding task:", error);
+            alert(`Failed to add task: ${error.message}`);
+        });
 }
+
 
 // Load tasks from the server
 function loadTasks() {
@@ -158,7 +205,7 @@ function showDeleteButton(event, taskId) {
 
 // Confirm deletion of the selected task
 function confirmDelete() {
-    if (    selectedTaskId) {
+    if (selectedTaskId) {
         deleteTask(selectedTaskId);
         hideDeleteButton();
     }
@@ -192,7 +239,7 @@ function hideDeleteButton() {
 }
 
 // Hide delete button if clicking outside
-document.addEventListener("click", function(event) {
+document.addEventListener("click", function (event) {
     if (!event.target.closest(".task-bar") && !event.target.closest("#delete-button")) {
         hideDeleteButton();
     }
@@ -200,4 +247,3 @@ document.addEventListener("click", function(event) {
 
 // Initial load of tasks
 loadTasks();
-
