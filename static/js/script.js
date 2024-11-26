@@ -1,5 +1,4 @@
 let selectedTaskId = null; // Track the selected task for deletion
-let isDarkMode = false;
 
 // Color mapping for categories
 const categoryColors = {
@@ -87,14 +86,6 @@ function closeTaskModal() {
     document.getElementById("modal-overlay").style.display = "none";
 }
 
-// Toggle dark mode
-function toggleDarkMode() {
-    isDarkMode = !isDarkMode;
-    document.body.style.background = isDarkMode ? "#333" : "linear-gradient(135deg, #f9fafc, #e9ecf2)";
-    document.body.style.color = isDarkMode ? "#ddd" : "#333";
-    document.getElementById("page-title").style.color = isDarkMode ? "#ddd" : "#333";
-}
-
 // Submit task data to the server
 function submitTask() {
     const name = document.getElementById("task-name").value;
@@ -115,7 +106,7 @@ function submitTask() {
 
     console.log("Submitting task:", { name, startDateFormatted, endDateFormatted, category, progress });
 
-    fetch('/tasks', {
+    fetch('/gantt/tasks', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -145,7 +136,7 @@ function submitTask() {
 
 // Load tasks from the server
 function loadTasks() {
-    fetch('/tasks')
+    fetch('/gantt/tasks')
         .then(response => response.json())
         .then(tasks => {
             console.log("Tasks loaded:", tasks);
@@ -175,7 +166,7 @@ function confirmDelete() {
 
 // Delete a task from the server
 function deleteTask(id) {
-    fetch(`/tasks/${id}`, { method: 'DELETE' })
+    fetch(`/gantt/tasks/${id}`, { method: 'DELETE' })
         .then(response => {
             if (!response.ok) {
                 return response.json().then(err => { throw new Error(err.error || "Server error"); });

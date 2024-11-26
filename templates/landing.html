@@ -1,51 +1,3 @@
-{% comment %} {% extends "layout.html" %}
-{% block header %}
-<div class="max-w-7xl mx-auto py-6 px-4">
-    <h1 class="text-3xl font-bold text-gray-900">Portfolio</h1>
-    <p class="mt-2 text-gray-600">Landing</p>
-</div>
-{% endblock %}
-{% block content %}
-<h1>Welcome to the IT Management Portfolio!</h1>
-<div class="mt-6">
-    <h2 class="text-2xl font-bold text-gray-900">About Us</h2>
-    <p class="mt-2 text-gray-600">We are a team of developers creating innovative solutions using Python and Flask.</p>
-</div>
-
-{% endblock %} {% endcomment %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Portfolio{% endblock %}</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        /* Additional custom styles (if needed) */
-        .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-            color: white;
-            background: linear-gradient(to bottom right, #4A90E2, #9013FE),
-                        url('https://example.com/tech-background.jpg') no-repeat center/cover;
-        }
-    </style>
-</head>
-<body class="bg-gray-100">
-    <div class="max-w-7xl mx-auto">
-        {% block header %}
-        {% endblock %}
-        
-        {% block content %}
-        {% endblock %}
-    </div>
-</body>
-</html>
 {% extends "layout.html" %}
 
 {% block header %}
@@ -59,3 +11,9 @@
 </div>
 {% endblock %}
 
+{% block content %}
+<div class="mt-6">
+    <h2 class="text-2xl font-bold text-gray-900">About Us</h2>
+    <p class="mt-2 text-gray-600">We are a team of developers creating innovative solutions using Python and Flask.</p>
+</div>
+{% endblock %}
