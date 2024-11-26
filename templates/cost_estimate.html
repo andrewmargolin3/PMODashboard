@@ -1,5 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
+    
+{% extends "layout.html" %}
+
+{% block header %}
+<div class="page-header">
+    <h1>Cost Estimate</h1>
+</div>
+{% endblock %}
+
+{% block content %}
+
 <head>
     <meta charset="UTF-8">
     <title>Cost Estimates</title>
@@ -82,16 +94,7 @@
     </style>
 </head>
 <body>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/project-charter">Project Charter</a>
-        <a href="/team-profile">Team Profile</a>
-        <a href="/gantt-chart">Gantt Chart</a>
-        <a href="/wbs">WBS</a>
-        <a href="/risk-management">Risk Management</a>
-        <a href="/critical-path-analysis">Critical Path Analysis</a>
-        <a href="/cost-estimate">Cost Estimate</a>
-    </nav>
+
 
     <div class="container">
         <h1>Cost Estimates</h1>
@@ -147,6 +150,11 @@
         </div>
     </div>
 </body>
+<div>
+    <h2>Cost Estimation Details</h2>
+    <p>Provide an in-depth breakdown of costs.</p>
+</div>
+{% endblock %}
 </html>
 
 
