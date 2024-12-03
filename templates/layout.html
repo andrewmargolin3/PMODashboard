@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Team | Project Portfolio</title>
+    <title>Project Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    {% block additional_styles %}
     <style>
 
     </style>
+    {% endblock %}
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
@@ -18,7 +20,7 @@
                     <div class="hidden md:flex items-center space-x-6">
                         <a href="/" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
                         <a href="/project-charter" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Project Charter</a>
-                        <a href="/team-profile" class="text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Team Profile</a>
+                        <a href="/team-profile" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Team Profile</a>
                         <a href="/gantt-chart" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Gantt Chart</a>
                         <a href="/wbs" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">WBS</a>
                         <a href="/risk-management" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Risk Management</a>
@@ -34,12 +36,26 @@
     </nav>
 
     <!-- Header Section -->
-    <header class="bg-white shadow">
+    <!--<header class="bg-white shadow">
+        {% block header %}
         <div class="max-w-7xl mx-auto py-6 px-4">
             <h1 class="text-3xl font-bold text-gray-900">Portfolio</h1>
             <p class="mt-2 text-gray-600">A dedicated group of professionals working together to deliver excellence.</p>
         </div>
+    {% endblock %}
+        <div class="max-w-7xl mx-auto py-6 px-4">
+            <h1 class="text-3xl font-bold text-gray-900">Portfolio</h1>
+            <p class="mt-2 text-gray-600">A dedicated group of professionals working together to deliver excellence.</p>
+        </div>
+    -->
     </header>
+    <main>
+        {% block content %}
+            <h1>Welcome to the placeholder page for references</h1>
+            <p>This is the example page of our Flask application.</p>
+            <img src="{{ url_for('static', filename='images/Adam.jpg') }}" class="image"/>
+        {% endblock %}
+    </main>
 
     <!-- Footer -->
     <footer class="bg-white border-t border-gray-200 mt-12">

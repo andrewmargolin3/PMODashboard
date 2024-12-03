@@ -1,22 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% extends "layout.html" %}
+
+{% block header %}
+<div class="page-header">
+    <h1>Gantt Chart</h1>
+</div>
+{% endblock %}
+
+{% block content %}
 <head>
     <meta charset="UTF-8">
     <title>Gantt Chart</title>
-    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+        #gantt-chart {
+            margin: 20px auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 900px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            display: block; /* Ensures buttons stack */
+            margin: 10px auto; /* Centers buttons and adds spacing */
+            padding: 10px 20px;
+            font-size: 14px;
+            background-color: #6c63ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            width: 150px; /* Optional: consistent width */
+        }
+        button:hover {
+            background-color: #4b47d4;
+        }
+        #delete-button {
+            display: none;
+            position: absolute;
+            padding: 8px 15px;
+            background-color: #ff4b5c;
+            color: white;
+            border-radius: 5px;
+        }
+        #task-modal, #modal-overlay {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            z-index: 1000;
+        }
+        .modal-input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+        }
+        .modal-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #6c63ff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        .task-bar {
+            fill: #6c63ff;
+            rx: 5;
+            ry: 5;
+            cursor: pointer;
+        }
+        .tooltip {
+            position: absolute;
+            padding: 8px;
+            background: #fff;
+            border-radius: 5px;
+            display: none;
+        }
+        h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold; 
+}
+
+    </style>
 </head>
 <body>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/project-charter">Project Charter</a>
-        <a href="/team-profile">Team Profile</a>
-        <a href="/gantt-chart">Gantt Chart</a>
-        <a href="/wbs">WBS</a>
-        <a href="/risk-management">Risk Management</a>
-        <a href="/cost-estimate">Cost Estimate</a>
-        <a href="/critical-path-analysis">Critical Path Analysis</a>
-    </nav>
-    <h1>Welcome to the Gantt Chart Page</h1>
-    <p>This is the gantt chart page of our Flask application.</p>
+    <h1>Gantt chart</h1>
+    <button onclick="openTaskModal()">Add Task</button>
+    <div id="gantt-chart"></div>
+    <button id="delete-button" onclick="confirmDelete()">Delete Task</button>
+
+    <div class="tooltip" id="tooltip"></div>
+    <div id="modal-overlay" onclick="closeTaskModal()"></div>
+    <div id="task-modal">
+        <div class="modal-header">Add New Task</div>
+        <input type="text" id="task-name" class="modal-input" placeholder="Task Name">
+        <select id="task-category" class="modal-input">
+            <option value="design">Design</option>
+            <option value="development">Development</option>
+            <option value="testing">Testing</option>
+        </select>
+        <input type="date" id="start-date" class="modal-input">
+        <input type="date" id="end-date" class="modal-input">
+        <input type="number" id="task-progress" class="modal-input" placeholder="Progress %" min="0" max="100">
+        <button class="modal-button" onclick="submitTask()">Submit Task</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
+{% endblock %}
 </html>

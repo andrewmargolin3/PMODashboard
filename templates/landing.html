@@ -1,22 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Landing Page</title>
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
-</head>
-<body>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/project-charter">Project Charter</a>
-        <a href="/team-profile">Team Profile</a>
-        <a href="/gantt-chart">Gantt Chart</a>
-        <a href="/wbs">WBS</a>
-        <a href="/risk-management">Risk Management</a>
-        <a href="/cost-estimate">Cost Estimate</a>
-        <a href="/critical-path-analysis">Critical Path Analysis</a>
-    </nav>
-    <h1>Welcome to the Landing Page</h1>
-    <p>This is the landing page of our Flask application.</p>
-</body>
-</html>
+{% extends "layout.html" %}
+
+{% block content %}
+<style>
+    .hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(to right, #1e3a8a, #60a5fa); /* Navy blue to sky blue gradient */
+        text-align: center;
+        color: white;
+    }
+    .hero h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    .hero p {
+        font-size: 1.25rem;
+        margin-bottom: 30px;
+    }
+    .cta-buttons a {
+        font-weight: bold;
+        background-color: #f56565; /* Red button */
+        color: white;
+        padding: 12px 25px;
+        border-radius: 5px;
+        margin: 10px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+    .cta-buttons a:hover {
+        background-color: #e53e3e; /* Darker red for hover */
+    }
+</style>
+
+<div class="hero">
+    <h1>Welcome to the IT Project Management Portfolio!</h1>
+    <p>A showcase of project management in action, built with Flask.</p>
+    <div class="cta-buttons">
+        <a href="project-charter">Project Charter</a>
+        <a href="team-profile">Meet the Team</a>
+    </div>
+</div>
+{% endblock %}
+

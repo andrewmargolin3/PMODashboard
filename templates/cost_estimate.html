@@ -1,5 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
+    
+{% extends "layout.html" %}
+
+{% block header %}
+<div class="page-header">
+    <h1>Cost Estimate</h1>
+</div>
+{% endblock %}
+
+{% block content %}
+
 <head>
     <meta charset="UTF-8">
     <title>Cost Estimates</title>
@@ -39,6 +51,12 @@
         h1 {
             text-align: center;
             color: #333;
+            font-weight: bold;
+            font-size: 32px;
+        }
+        h2 {
+            font-weight: bold;
+            font-size: 24px;
         }
 
         .content {
@@ -82,16 +100,7 @@
     </style>
 </head>
 <body>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/project-charter">Project Charter</a>
-        <a href="/team-profile">Team Profile</a>
-        <a href="/gantt-chart">Gantt Chart</a>
-        <a href="/wbs">WBS</a>
-        <a href="/risk-management">Risk Management</a>
-        <a href="/cost-estimate">Cost Estimate</a>
-        <a href="/critical-path-analysis">Critical Path Analysis</a>
-    </nav>
+
 
     <div class="container">
         <h1>Cost Estimates</h1>
@@ -99,6 +108,7 @@
             <h2>Project Cost Breakdown</h2>
             <p>
                 This page provides an estimation of the total project cost, including expenses for labor, materials, equipment, overhead, contingency, and tuition. Accurate cost estimates help ensure the project is well-budgeted and supports timely decision-making.
+               The cost estimation strategy used was a 3-Point Estimate, where we calculated the top cost, low cost, and determined the middle cost to be the estimation below.
             </p>
 
             <h2>Estimated Costs</h2>
@@ -146,6 +156,7 @@
         </div>
     </div>
 </body>
+{% endblock %}
 </html>
 
 

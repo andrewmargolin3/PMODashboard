@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% extends "layout.html" %}
+
+{% block header %}
+<div class="page-header">
+    <h1>Critical Path Analysis</h1>
+</div>
+{% endblock %}
+
+{% block content %}
 <head>
     <meta charset="UTF-8">
     <title>Critical Path Analysis</title>
@@ -39,6 +48,12 @@
         h1 {
             text-align: center;
             color: #333;
+            font-weight: bold;
+            font-size: 32px;
+        }
+        h2 {
+            font-weight: bold;
+            font-size: 24px;
         }
 
         .content {
@@ -86,44 +101,53 @@
     </style>
 </head>
 <body>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/project-charter">Project Charter</a>
-        <a href="/team-profile">Team Profile</a>
-        <a href="/gantt-chart">Gantt Chart</a>
-        <a href="/wbs">WBS</a>
-        <a href="/risk-management">Risk Management</a>
-        <a href="/cost-estimate">Cost Estimate</a>
-        <a href="/critical-path-analysis">Critical Path Analysis</a>
-    </nav>
 
     <div class="container">
         <h1>Critical Path Analysis</h1>
         <div class="content">
+            <h2>AOA Network Diagram</h2>
+            <img src="static/images/AOA_Diagram.jpeg" alt="AOA Network Diagram" style="width: 75%; height: 75%;">
+
             <h2>Overview</h2>
             <p>
-                Critical Path Analysis (CPA) is a project management technique used to determine the sequence of essential tasks that must be completed on time for the project to meet its deadline. The "critical path" represents the longest path through the project timeline, ensuring that all tasks are completed on schedule.
+                Critical Path Analysis (CPA) is a project management technique used to determine the sequence of essential tasks that must be completed on time for the project to meet its deadline. The "critical path" represents the longest path through the project timeline, ensuring that all tasks are completed on schedule. Time to completion is often notated by a number, such as (4) being 4 days to complete. When the tasks are added up by dates, that is your critical path and the shortest time of completion.
             </p>
 
             <h2>Importance of Critical Path</h2>
             <p>
-                Identifying the critical path allows project managers to focus on tasks that have the highest impact on the project’s completion date. Delays in tasks on the critical path could result in the entire project being delayed, so these tasks must be monitored closely.
+                Identifying the critical path allows project managers to focus on tasks that have the highest impact on the project’s completion date. Delays in tasks on the critical path could result in the entire project being delayed, so these tasks must be monitored closely. 
             </p>
-
-            <h2>Critical Path Example</h2>
-            <p>Below is a sample critical path diagram showing tasks and their dependencies:</p>
+			
+			<h2>Critical Path</h2>
+			<p>
+			A. Project Planning and Group Roles (2) <br>
+			D. Create GitHub Repository (1) <br>
+			E. Creation of Main Pages (21) <br>
+			F. Styling and Cleanup (7) <br>
+			G. Monitoring and Testing (7)
+			<br>
+			<br>
+			This is our critical path and will elapse 38 days. There are additional paths that can be taken, but this is the shortest path hitting every main task.
+			</p>
+			
+            <h2>Critical Path Diagram</h2>
+            <p>Below is our critical path diagram showing tasks and their expected time in days:</p>
 
             <!-- Simple Critical Path Diagram -->
             <div class="diagram">
-                <div class="task">Task A</div>
+                <div class="task">Task A (2)</div>
                 <div class="arrow">→</div>
-                <div class="task">Task B</div>
+                <div class="task">Task D (1)</div>
                 <div class="arrow">→</div>
-                <div class="task">Task C</div>
+                <div class="task">Task E (21)</div>
                 <div class="arrow">→</div>
-                <div class="task">Task D</div>
+                <div class="task">Task F (7)</div>
+				 <div class="arrow">→</div>
+				 <div class="task">Task G (7) </div>
             </div>
         </div>
     </div>
 </body>
+
+{% endblock %}
 </html>

@@ -1,7 +1,21 @@
 from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
+from Gantt_App import gantt_bp, db  # Import the Gantt blueprint and database
 
+# Create the Flask app
 app = Flask(__name__)
 
+# Configure the database
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///gantt.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+# Initialize the database with the main app
+db.init_app(app)
+
+# Register the Gantt blueprint with a URL prefix
+app.register_blueprint(gantt_bp, url_prefix='/gantt')
+
+# Define routes for various pages
 @app.route('/')
 def landing_page():
     return render_template('landing.html')
@@ -33,9 +47,26 @@ def critical_path_analysis():
 @app.route('/risk-management')
 def risk_management():
     return render_template('risk_management.html')
+
 @app.route('/layout')
 def layout():
     return render_template('layout.html')
 
+@app.route('/example')
+def example():
+    return render_template('example.html')
+
+# Main entry point
+if __name__ == '__main__':
+    # Ensure the database tables are created
+    with app.app_context():
+        db.create_all()
+
+    # Run the Flask app
+    app.run(debug=True)
+
+@app.route('/example')
+def example():
+    return render_template('example.html')
 if __name__ == '__main__':
     app.run(debug=True)

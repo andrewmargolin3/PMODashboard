@@ -1,0 +1,7 @@
+#To install the required software, run the command pip install -r requirements.txt
+
+flask
+flask-sqlalchemy
+flask-migrate
+werkzeug
+sqlalchemy
