@@ -51,7 +51,9 @@ def risk_management():
 @app.route('/layout')
 def layout():
     return render_template('layout.html')
-
+@app.route('/SOW')
+def SOW():
+    return render_template('SOW.html')
 @app.route('/example')
 def example():
     return render_template('example.html')
