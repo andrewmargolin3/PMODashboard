@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Status Report Template</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <style>
         body { 
             font-family: Arial, sans-serif; 
             line-height: 1.6; 
-            max-width: 800px; 
+
             margin: 0 auto; 
             padding: 20px; 
         }
@@ -15,6 +17,14 @@
             color: #333; 
             border-bottom: 1px solid #ddd; 
             padding-bottom: 10px; 
+        }
+        h1 {
+            font-weight: bold;
+            font-size: 32px;
+        }
+        h2 {
+            font-weight: bold;
+            font-size: 24px;
         }
         .section {
             margin-bottom: 20px;
@@ -33,7 +43,34 @@
         .status-red { color: red; }
     </style>
 </head>
+<header>
+            <!-- Navigation -->
+            <nav class="bg-white shadow-lg">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="flex justify-between h-16">
+                        <div class="flex space-x-7">
+                            <div class="hidden md:flex items-center space-x-6">
+                                <a href="/" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                                <a href="/project-charter" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Project Charter</a>
+                                <a href="/team-profile" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Team Profile</a>
+                                <a href="/SOW" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Statement of Work</a>
+                                <a href="/gantt-chart" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Gantt Chart</a>
+                                <a href="/wbs" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">WBS</a>
+                                <a href="/risk-management" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Risk Management</a>
+                                <a href="/critical-path-analysis" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Critical Path Analysis</a>
+                                <a href="/cost-estimate" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Cost Estimate</a>
+                                <a href="/status_report" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Status Report</a>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+</header>
 <body>
+    <div class="body-wrapper mx-auto max-w-3xl px-4">
     <h1>Project Status Report</h1>
 
     <div class="section">
@@ -122,6 +159,7 @@
         <p><strong>Prepared by:</strong> <span class="placeholder">[Your Name]</span></p>
         <p><strong>Date:</strong> <span class="placeholder">[Current Date]</span></p>
         <p><strong>Reviewed by:</strong> <span class="placeholder">[Supervisor/Manager Name]</span></p>
+    </div>
     </div>
 </body>
 </html>
