@@ -54,6 +54,9 @@ def layout():
 @app.route('/SOW')
 def SOW():
     return render_template('SOW.html')
+@app.route('/status_report')
+def status_report():
+    return render_template('status_report.html')
 @app.route('/example')
 def example():
     return render_template('example.html')
