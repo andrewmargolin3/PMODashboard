@@ -1,119 +1,17 @@
-<!--
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Project Charter</title>
-    <link rel= "stylesheet" type= "text/css" href= "/static/styles.css">
-</head>
-<body>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/project-charter">Project Charter</a>
-        <a href="/team-profile">Team Profile</a>
-        <a href="/gantt-chart">Gantt Chart</a>
-        <a href="/wbs">WBS</a>
-        <a href="/risk-management">Risk Management</a>
-        <a href="/cost-estimate">Cost Estimate</a>
-        <a href="/critical-path-analysis">Critical Path Analysis</a>
-    </nav>
- <h1>Team 4 Project Charter</h1>
-    <div class="section">
-        <p style="font-size: 1.20rem"> <span style="font-size: 1.75rem;font-weight: bold">Department:</span> School of Information Technology</p>
-    </div>
-
-    <div class="section">
-        <p style="font-size: 1.20rem"> <span style="font-size: 1.75rem;font-weight: bold">Date Created:</span> 10/1/2024</p>
-    </div>
-
-    <div class="section">
-        <p style="font-size: 1.20rem"> <span style="font-size: 1.75rem;font-weight: bold">Last Date Updated:</span> 10/31/2024</p>
-    </div>
-
-    <div class="section">
-        <p style="font-size: 1.20rem"> <span style="font-size: 1.75rem;font-weight: bold">Team Manager:</span> Adam Haywood</p>
-    </div>
-
-    <div class="section">
-        <p style="font-size: 1.20rem;"> <span style="font-size: 1.75rem;font-weight: bold">Team Roles</span></p>
-        <ul style="padding-left: 2em">
-            <li>Kenneth Lindsey - Designer</li>
-            <li>Andrew Margolin - Designer</li>
-	        <li>Nitin Penmetsa - Designer</li>
-            <li>Luke Lindsey - Developer/Researcher</li>
-            <li>Bidhatri Amatya - Researcher/Designer</li>
-            <li>Emman Asamoah - Developer</li>
-			<li>Nick Capozzi - Researcher</li>
-            <li>Adam Haywood - Project Manager (PM)</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h3>Mission and Objectives</h3>
-        <p>Create a Python-based dashboard interface using Flask as a web framework, complemented with HTML and CSS for appearance.</p>
-    </div>
-
-    <div class="section">
-        <h3>Work Processes</h3>
-        <p>We'll use Flask as a web framework in addition to some HTML and CSS for aesthetics. Include a Gantt chart, interactive calendar, mind map, etc.</p>
-    </div>
-
-    <div class="section">
-        <h3>Communication Norms</h3>
-        <p>In class (Tuesday and Friday 12:30 am - 1:50 pm). MS Teams when apart.</p>
-    </div>
-
-    <div class="section">
-        <h3>Ground Rules</h3>
-        <p>No fighting. Complete assignments on time. Seek help from the team when needed.</p>
-    </div>
-
-    <div class="section">
-        <h3>Conflict Resolution</h3>
-        <p>Talk to each other and resolve issues by meeting in the middle.</p>
-    </div>
-
-    <div class="section">
-        <h3>Budget and Resources</h3>
-        <p> $40,000 is the budget for the for our project. Cost estimate and breakdown is listed in our <a href="cost_estimate.html">cost estimation</a> page.
-	</p>
-    </div>
-
-    <div class="section">
-        <p style="font-size: 1.20rem;"> <span style="font-size: 1.75rem;font-weight: bold;">Signatures</span></p>
-        <ul style="padding-left: 2em;">
-            <li>Manager: Adam Haywood</li>
-            <li>Kenneth Lindsey</li>
-            <li>Luke Lindsey</li>
-            <li>Andrew Margolin</li>
-            <li>Bidhatri Amatya</li>
-            <li>Emman Asamoah</li>
-			<li>Nick Capozzi</li>
-		<li>Nitin Penmetsa</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h3>Performance Assessment</h3>
-        <p>N/A</p>
-    </div>
-
-    <hr>
-    <footer>
-        <p class="text-center">© 2024 Project Team. All rights reserved.</p>
-    </footer>
-
-</body>
-</html>
--->
 {% extends "layout.html" %}
+{%block additional_styles%}
+<style>
+    nav {
+        text-align: center;
+    }
+</style>
+{% endblock %}
 {% block header %}
 <div class="max-w-7xl mx-auto py-6 px-4">
     <h1 class="text-3xl font-bold text-gray-900">Portfolio</h1>
     <p class="mt-2 text-gray-600">The project charter for our portfolio.</p>
 </div>
 {% endblock %}
--->
 {% block content %}
 <div class="max-w-5xl mx-auto my-10 bg-white shadow-lg rounded-lg p-6">
     <h1 class="text-4xl font-bold text-blue-600 border-b-2 border-blue-400 pb-2 text-center flex items-center justify-center h-40">
